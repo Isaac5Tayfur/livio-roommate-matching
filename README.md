@@ -1,5 +1,7 @@
 # 🧩 Livio – Smart Roommate Matching
 
+🌐 [Try the live app on Streamlit](https://livio-roommate-matching.streamlit.app)
+
 Livio is an intelligent and multilingual roommate recommendation app that helps users find the most compatible flatmates based on lifestyle traits, habits, and preferences. Built with Streamlit, it leverages machine learning (Cosine Similarity) and real-world profiles to provide accurate, explainable matches.
 
 ![Livio Banner](Media/banner.png)
@@ -89,6 +91,15 @@ streamlit run app.py
 ```
 
 ---
+
+## 🌐 Live App
+
+👉 [Access the app on Streamlit Cloud](https://livio-roommate-matching.streamlit.app)
+
+Powered by Streamlit • No signup required • Fully interactive
+
+---
+
 
 ## 🤖 Future Enhancements
 
