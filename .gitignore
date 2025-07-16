@@ -59,6 +59,10 @@ Media/chart_export.png
 Media/table_export.png
 normalized_encoded.csv
 
+# Except these specific files
+!tenants_dataset.csv
+!metadata.xlsx
+
 # System files
 .DS_Store
 Thumbs.db
