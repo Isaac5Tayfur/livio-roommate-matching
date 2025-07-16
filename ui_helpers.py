@@ -150,8 +150,14 @@ def generate_compatibility_table(result_tuple, language='English'):
     num_cols = len(result_df.columns)
     table_width = 200 + 150 * (num_cols - 1)  # base 200 + 150px per column
 
-    # Save the Plotly table as a PNG
-    pio.write_image(fig_table, "Media/table_export.png", format="png", scale=2, width=table_width, height=600)
+
+    # Skip image export on Streamlit Cloud (Kaleido not supported there)
+    if not os.environ.get("STREAMLIT_SERVER_HEADLESS", False):
+        try:
+            pio.write_image(fig_table, "Media/table_export.png", format="png", scale=2, width=table_width, height=600)
+        except Exception as e:
+            print("⚠️ Could not export table image:", e)
+
 
     return fig_table
 
