@@ -5,6 +5,7 @@ from ui_helpers import (
     generate_compatibility_table,
     generate_explanation_block
 )
+import os
 
 # PAGE CONFIGURATION
 st.set_page_config(layout="wide", page_title="Livio – Smart Roommate Matching", page_icon="🧩")
@@ -221,6 +222,9 @@ elif result is not None:
                         chart_file, file_name="livio_chart.png", mime="image/png")
 
     # Table PNG
-    with open("Media/table_export.png", "rb") as table_file:
-        st.download_button("📋 " + (_("Table PNG") if language == "English" else "Tabla de comparación"),
-                        table_file, file_name="livio_table.png", mime="image/png")
+    if os.path.exists("Media/table_export.png"):
+        with open("Media/table_export.png", "rb") as table_file:
+            st.download_button("📋 " + (_("Table PNG") if language == "English" else "Tabla de comparación"),
+                            table_file, file_name="livio_table.png", mime="image/png")
+    else:
+        st.warning("📋 " + (_("Table export not available in this environment.") if language == "English" else "Exportar tabla no disponible en este entorno."))
